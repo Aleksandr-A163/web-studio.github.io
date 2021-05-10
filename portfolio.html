@@ -9,13 +9,13 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/main.min.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.2.0/modern-normalize.min.css"
       integrity="sha512-sqIVMkf5f8XGYI/UZYGs7wODxlUeoj9JknataPfUwtvrSKWMHrMXGZ7Evb6nabFYJQG15vFFyALe6r0nWCD1Ug=="
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./css/main.min.css" />
     <title>Портфолио</title>
   </head>
   <body class="body">
@@ -73,7 +73,89 @@
             >
           </li>
         </ul>
+        <!-- Mobile Menu -->
+        <div
+          class="mobile-menu__container"
+          id="mobile-menu-container"
+          data-menu
+        >
+          <nav class="mobile-menu__navigation">
+            <ul class="list mobile-menu__navigation-list">
+              <li class="mobile-menu__navigation-item">
+                <a
+                  href="./index.html"
+                  class="mobile-menu__navigation-link mobile-menu__current-page"
+                  >Студия</a
+                >
+              </li>
+              <li class="mobile-menu__navigation-item">
+                <a href="./portfolio.html" class="mobile-menu__navigation-link"
+                  >Портфолио</a
+                >
+              </li>
+              <li class="mobile-menu__navigation-item">
+                <a href="#" class="mobile-menu__navigation-link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="mobile-menu__contacts-wrapper">
+            <ul class="list mobile-menu__contact-list">
+              <li class="mobile-menu__contact-item-tel">
+                <a href="tel:+380961111111" class="mobile-menu__contact-tel"
+                  >+38 096 111 11 11</a
+                >
+              </li>
+              <li class="mobile-menu__contact-item-mail">
+                <a
+                  href="mailto:info@devstudio.com"
+                  class="mobile-menu__contact-mail"
+                  >info@devstudio.com</a
+                >
+              </li>
+            </ul>
+            <ul class="mobile-menu__social-link-list">
+              <li class="mobile-menu__social-link-list-item">
+                <a href="#" class="mobile-menu__social-link"> Instagram </a>
+                <span class="mobile-menu__social-link-separator">|</span>
+              </li>
+              <li class="mobile-menu__social-link-list-item">
+                <a href="#" class="mobile-menu__social-link"> Twitter </a>
+                <span class="mobile-menu__social-link-separator">|</span>
+              </li>
+              <li class="mobile-menu__social-link-list-item">
+                <a href="#" class="mobile-menu__social-link"> Facebook </a>
+                <span class="mobile-menu__social-link-separator">|</span>
+              </li>
+              <li class="mobile-menu__social-link-list-item">
+                <a href="#" class="mobile-menu__social-link"> LinkedIn </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
+      <button
+        type="button"
+        class="mobile-menu__button"
+        aria-expanded="false"
+        aria-controls="mobile-menu-container"
+        data-menu-button
+      >
+        <svg
+          class="mobile-menu__icon"
+          aria-label="мобильное меню"
+          width="40px"
+          height="40px"
+        >
+          <use
+            class="mobile-menu__icon-open"
+            href="./images/icons.svg#mobile-menu"
+          ></use>
+          <use
+            class="mobile-menu__icon-close"
+            href="./images/icons.svg#icon-x"
+          ></use>
+        </svg>
+      </button>
     </header>
     <main>
       <!-- Our portfolio -->
@@ -108,12 +190,57 @@
           <ul class="work-list list">
             <li class="work-list__item">
               <div class="work-list__photo">
-                <img
-                  src="./images/portfolio/work1.jpg"
-                  alt="Ноутбук с
-                изображением лендинга"
-                  width="370"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/work1-m.webp    1x,
+                      ./images/portfolio/work1-m@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work1-t.webp    1x,
+                      ./images/portfolio/work1-t@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work1.webp    1x,
+                      ./images/portfolio/work1@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work1-m.jpg    1x,
+                      ./images/portfolio/work1-m@2x.jpg 2x
+                    "
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work1-t.jpg    1x,
+                      ./images/portfolio/work1-t@2x.jpg 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work1.jpg    1x,
+                      ./images/portfolio/work1@2x.jpg 2x
+                    "
+                    media="(min-width: 1200px)"
+                  />
+                  <img
+                    src="./images/portfolio/work1.jpg"
+                    alt="Ноутбук с изображением лендинга"
+                  />
+                </picture>
                 <div class="work-list__overlay">
                   <p class="work-list__text">
                     Технокряк это современная площадка распространения
@@ -129,15 +256,62 @@
             </li>
             <li class="work-list__item">
               <div class="work-list__photo">
-                <img
-                  src="./images/portfolio/work2.jpg"
-                  alt="Два баскетболиста"
-                  width="370"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/work2-m.webp    1x,
+                      ./images/portfolio/work2-m@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work2-t.webp    1x,
+                      ./images/portfolio/work2-t@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work2.webp    1x,
+                      ./images/portfolio/work2@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work2-m.jpg    1x,
+                      ./images/portfolio/work2-m@2x.jpg 2x
+                    "
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work2-t.jpg    1x,
+                      ./images/portfolio/work2-t@2x.jpg 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work2.jpg    1x,
+                      ./images/portfolio/work2@2x.jpg 2x
+                    "
+                    media="(min-width: 1200px)"
+                  />
+                  <img
+                    src="./images/portfolio/work2.jpg"
+                    alt="Два баскетболиста"
+                  />
+                </picture>
                 <div class="work-list__overlay">
                   <p class="work-list__text">
-                    Постер New Orlean vs Golden Star был специально разработан для баскетбольного турнира проходившего в Новом Орлеане
-                    летом 2019 года.
+                    Технокряк это современная площадка распространения
+                    коронавируса. Компании используют эту платформу для
+                    цифрового шпионажа и атак на защищённые сервера конкурентов.
                   </p>
                 </div>
               </div>
@@ -150,14 +324,62 @@
             </li>
             <li class="work-list__item">
               <div class="work-list__photo">
-                <img
-                  src="./images/portfolio/work3.jpg"
-                  alt="Логотип Seafood"
-                  width="370"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/work3-m.webp    1x,
+                      ./images/portfolio/work3-m@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work3-t.webp    1x,
+                      ./images/portfolio/work3-t@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work3.webp    1x,
+                      ./images/portfolio/work3@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work3-m.jpg    1x,
+                      ./images/portfolio/work3-m@2x.jpg 2x
+                    "
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work3-t.jpg    1x,
+                      ./images/portfolio/work3-t@2x.jpg 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work3.jpg    1x,
+                      ./images/portfolio/work3@2x.jpg 2x
+                    "
+                    media="(min-width: 1200px)"
+                  />
+                  <img
+                    src="./images/portfolio/work3.jpg"
+                    alt="Логотип Seafood"
+                  />
+                </picture>
                 <div class="work-list__overlay">
                   <p class="work-list__text">
-                    Мобильное приложение Seafood было специально разработано для ресторана морской кухни города Бристоль Англия.
+                    Технокряк это современная площадка распространения
+                    коронавируса. Компании используют эту платформу для
+                    цифрового шпионажа и атак на защищённые сервера конкурентов.
                   </p>
                 </div>
               </div>
@@ -168,14 +390,59 @@
             </li>
             <li class="work-list__item">
               <div class="work-list__photo">
-                <img
-                  src="./images/portfolio/work4.jpg"
-                  alt="Наушники"
-                  width="370"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/work4-m.webp    1x,
+                      ./images/portfolio/work4-m@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work4-t.webp    1x,
+                      ./images/portfolio/work4-t@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work4.webp    1x,
+                      ./images/portfolio/work4@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work4-m.jpg    1x,
+                      ./images/portfolio/work4-m@2x.jpg 2x
+                    "
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work4-t.jpg    1x,
+                      ./images/portfolio/work4-t@2x.jpg 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work4.jpg    1x,
+                      ./images/portfolio/work4@2x.jpg 2x
+                    "
+                    media="(min-width: 1200px)"
+                  />
+                  <img src="./images/portfolio/work4.jpg" alt="Наушники" />
+                </picture>
                 <div class="work-list__overlay">
                   <p class="work-list__text">
-                    Проект Prime это уникальный разработанный план маркетинговых мероприятий для крупного международного реселлера.
+                    Технокряк это современная площадка распространения
+                    коронавируса. Компании используют эту платформу для
+                    цифрового шпионажа и атак на защищённые сервера конкурентов.
                   </p>
                 </div>
               </div>
@@ -186,14 +453,59 @@
             </li>
             <li class="work-list__item">
               <div class="work-list__photo">
-                <img
-                  src="./images/portfolio/work5.jpg"
-                  alt="Коробки"
-                  width="370"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/work5-m.webp    1x,
+                      ./images/portfolio/work5-m@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work5-t.webp    1x,
+                      ./images/portfolio/work5-t@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work5.webp    1x,
+                      ./images/portfolio/work5@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work5-m.jpg    1x,
+                      ./images/portfolio/work5-m@2x.jpg 2x
+                    "
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work5-t.jpg    1x,
+                      ./images/portfolio/work5-t@2x.jpg 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work5.jpg    1x,
+                      ./images/portfolio/work5@2x.jpg 2x
+                    "
+                    media="(min-width: 1200px)"
+                  />
+                  <img src="./images/portfolio/work5.jpg" alt="Коробки" />
+                </picture>
                 <div class="work-list__overlay">
                   <p class="work-list__text">
-                    Проект Boxes это простое, но невероятно эффективное мобильное приложение для московской службы доставки.
+                    Технокряк это современная площадка распространения
+                    коронавируса. Компании используют эту платформу для
+                    цифрового шпионажа и атак на защищённые сервера конкурентов.
                   </p>
                 </div>
               </div>
@@ -204,14 +516,59 @@
             </li>
             <li class="work-list__item">
               <div class="work-list__photo">
-                <img
-                  src="./images/portfolio/work6.jpg"
-                  alt="Монитор"
-                  width="370"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/work6-m.webp    1x,
+                      ./images/portfolio/work6-m@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work6-t.webp    1x,
+                      ./images/portfolio/work6-t@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work6.webp    1x,
+                      ./images/portfolio/work6@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work6-m.jpg    1x,
+                      ./images/portfolio/work6-m@2x.jpg 2x
+                    "
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work6-t.jpg    1x,
+                      ./images/portfolio/work6-t@2x.jpg 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work6.jpg    1x,
+                      ./images/portfolio/work6@2x.jpg 2x
+                    "
+                    media="(min-width: 1200px)"
+                  />
+                  <img src="./images/portfolio/work6.jpg" alt="Монитор" />
+                </picture>
                 <div class="work-list__overlay">
                   <p class="work-list__text">
-                    Inspiration has no Borders лаконичный и интуитивный лэндинг радующий клиентов международной компании из Вены.
+                    Технокряк это современная площадка распространения
+                    коронавируса. Компании используют эту платформу для
+                    цифрового шпионажа и атак на защищённые сервера конкурентов.
                   </p>
                 </div>
               </div>
@@ -222,10 +579,59 @@
             </li>
             <li class="work-list__item">
               <div class="work-list__photo">
-                <img src="./images/portfolio/work7.jpg" alt="Книга" />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/work7-m.webp    1x,
+                      ./images/portfolio/work7-m@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work7-t.webp    1x,
+                      ./images/portfolio/work7-t@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work7.webp    1x,
+                      ./images/portfolio/work7@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work7-m.jpg    1x,
+                      ./images/portfolio/work7-m@2x.jpg 2x
+                    "
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work7-t.jpg    1x,
+                      ./images/portfolio/work7-t@2x.jpg 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work7.jpg    1x,
+                      ./images/portfolio/work7@2x.jpg 2x
+                    "
+                    media="(min-width: 1200px)"
+                  />
+                  <img src="./images/portfolio/work7.jpg" alt="Книга" />
+                </picture>
                 <div class="work-list__overlay">
                   <p class="work-list__text">
-                    Издание Limited Edition это разработанный с нуля проект артбука для модного дома в городе Киев.
+                    Технокряк это современная площадка распространения
+                    коронавируса. Компании используют эту платформу для
+                    цифрового шпионажа и атак на защищённые сервера конкурентов.
                   </p>
                 </div>
               </div>
@@ -236,14 +642,59 @@
             </li>
             <li class="work-list__item">
               <div class="work-list__photo">
-                <img
-                  src="./images/portfolio/work8.jpg"
-                  alt="Бирка LAB"
-                  width="370"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/work8-m.webp    1x,
+                      ./images/portfolio/work8-m@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work8-t.webp    1x,
+                      ./images/portfolio/work8-t@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work8.webp    1x,
+                      ./images/portfolio/work8@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work8-m.jpg    1x,
+                      ./images/portfolio/work8-m@2x.jpg 2x
+                    "
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work8-t.jpg    1x,
+                      ./images/portfolio/work8-t@2x.jpg 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work8.jpg    1x,
+                      ./images/portfolio/work8@2x.jpg 2x
+                    "
+                    media="(min-width: 1200px)"
+                  />
+                  <img src="./images/portfolio/work8.jpg" alt="Бирка LAB" />
+                </picture>
                 <div class="work-list__overlay">
                   <p class="work-list__text">
-                    Проект LAB это проект маркетинговых мероприятий и работ, увеличивший прибыль арт-студии в Варшаве на 25% за 2019 год.
+                    Технокряк это современная площадка распространения
+                    коронавируса. Компании используют эту платформу для
+                    цифрового шпионажа и атак на защищённые сервера конкурентов.
                   </p>
                 </div>
               </div>
@@ -254,16 +705,62 @@
             </li>
             <li class="work-list__item">
               <div class="work-list__photo">
-                <img
-                  src="./images/portfolio/work9.jpg"
-                  alt="Работа за
-                ноутбуком"
-                  width="370"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/work9-m.webp    1x,
+                      ./images/portfolio/work9-m@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work9-t.webp    1x,
+                      ./images/portfolio/work9-t@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work9.webp    1x,
+                      ./images/portfolio/work9@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work9-m.jpg    1x,
+                      ./images/portfolio/work9-m@2x.jpg 2x
+                    "
+                    media="(max-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work9-t.jpg    1x,
+                      ./images/portfolio/work9-t@2x.jpg 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/work9.jpg    1x,
+                      ./images/portfolio/work9@2x.jpg 2x
+                    "
+                    media="(min-width: 1200px)"
+                  />
+                  <img
+                    src="./images/portfolio/work9.jpg"
+                    alt="Работа за ноутбуком"
+                  />
+                </picture>
                 <div class="work-list__overlay">
                   <p class="work-list__text">
-                    Growing Business это мощное веб-приложение для бизнес-школы города Нью-Йорк, позволяющее в считанные дни оцифровать
-                    метрики ваших бизнес задач.
+                    Технокряк это современная площадка распространения
+                    коронавируса. Компании используют эту платформу для
+                    цифрового шпионажа и атак на защищённые сервера конкурентов.
                   </p>
                 </div>
               </div>
@@ -363,5 +860,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>
